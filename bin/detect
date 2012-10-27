@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+# this pack is valid for apps with config.yml and Rules in the root
+if [ -f $1/config.yaml ] && [ -f $1/Rules ]; then
+  echo "Nanoc"
+  exit 0
+else
+  exit 1
+fi
