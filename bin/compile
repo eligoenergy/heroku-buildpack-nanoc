@@ -91,7 +91,9 @@ echo "-----> Vendoring nginx $NGINX_VERSION"
 mkdir -p "$BUILD_DIR/bin"
 cp "$VENDORED_NGINX/sbin/nginx" "$BUILD_DIR/bin/nginx"
 mkdir -p "$BUILD_DIR/conf"
-cp "$BUILDPACK_DIR/support/nginx.conf.erb" "$BUILD_DIR/conf/nginx.conf.erb"
+if [ ! -f "$BUILD_DIR/conf/nginx.conf.erb" ]; then
+  cp "$BUILDPACK_DIR/support/nginx.conf.erb" "$BUILD_DIR/conf/nginx.conf.erb"
+fi
 
 # build a startup script
 cat <<EOF >"$BUILD_DIR/bin/start_nginx"
