@@ -96,7 +96,7 @@ if [ ! -f "$SITE_DIR/conf/nginx.conf.erb" ]; then
   cp "$BUILDPACK_DIR/support/nginx.conf.erb" "$BUILD_DIR/conf/nginx.conf.erb"
 else
   echo "Use nginx configuration in application (conf/nginx.conf.erb)" | indent
-  cp "$SITE_DIR/support/nginx.conf.erb" "$BUILD_DIR/conf/nginx.conf.erb"
+  cp "$SITE_DIR/conf/nginx.conf.erb" "$BUILD_DIR/conf/nginx.conf.erb"
 fi
 
 # build a startup script
