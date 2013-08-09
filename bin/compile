@@ -59,7 +59,7 @@ if [ ! -f $SITE_DIR/Gemfile ]; then
     exit 1
 fi
 
-echo "-----> Compiling Nanoc site"
+echo "-----> Compiling Nanoc site, environment: ${NANOC_ENVIRONMENT:-development}"
 
 # set up nanoc config
 cat << EOF >> $SITE_DIR/config.yaml
