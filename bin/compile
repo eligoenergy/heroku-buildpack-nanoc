@@ -97,9 +97,9 @@ if [ ! -f "$SITE_DIR/conf/nginx.conf.erb" ]; then
 else
   echo "Use nginx configuration in application (conf/nginx.conf.erb)" | indent
   cp "$SITE_DIR/conf/nginx.conf.erb" "$BUILD_DIR/conf/nginx.conf.erb"
-  # use htaccess file (http passwords) if it's present in site directory
+  # use htaccess file (with http passwords) if it's present in site directory
   if [ -f "$SITE_DIR/conf/htaccess" ]; then
-    cp "$SITE_DIR/conf/htaccess" $BUILD_DIR/conf/htaccess"
+    cp "$SITE_DIR/conf/htaccess" "$BUILD_DIR/conf/htaccess"
   fi
 fi
 
